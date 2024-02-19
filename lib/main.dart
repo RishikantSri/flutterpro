@@ -40,6 +40,16 @@ class AppBarExample extends StatelessWidget {
                   return Scaffold(
                     appBar: AppBar(
                       title: const Text('Next page'),
+                      actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a snackbar')));
+            },
+          ),
+    ],
                     ),
                     body: const Center(
                       child: Text(
